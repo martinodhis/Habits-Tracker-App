@@ -9,6 +9,8 @@ const HabitForm = ({ onAddHabit }) => {
         frequncy: 'Daily',
         status: 'Active'
     });
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
     const handleChange = (e) =>{
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -45,7 +47,7 @@ const HabitForm = ({ onAddHabit }) => {
             {error && <div className="error-message" style ={{color: 'red', marginBottom: '1rem'}}>{error}</div>}
             {success && <div className="success-message"style={{color: 'green', marginBottom: '1rem'}}>Habit successfully logged!</div>}
 
-            <form onSubmit={handlesubmit}className="habit-form">
+            <form onSubmit={handleSubmit} className="habit-form">
                 <div className="form-group">
                     <label htmlFor="title">Habit Title:</label>
                     <input
@@ -59,17 +61,6 @@ const HabitForm = ({ onAddHabit }) => {
                 </div>
 
                 <div>
-                    <label htmlFor="description">Description:</label>
-                    <textarea
-                        id="description"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleChange}
-                        placeholder="Why or how do you want to accomplish this?"
-                    />
-                </div>
-
-                <div ClassName="form-group">
                     <label htmlFor="description">Description:</label>
                     <textarea
                         id="description"

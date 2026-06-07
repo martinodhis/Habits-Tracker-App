@@ -36,7 +36,7 @@ const AddHabit = () => {
             </div>
 
             {/* Passing state action download using props*/}
-            <HabitForm onAddHabit={handleAddNewHabitYoServer}/>
+            <HabitForm onAddHabit={handleAddNewHabitToServer}/>
         </main>
     );
 };
