@@ -1,0 +1,22 @@
+{
+  "habits": [
+    {
+      "id": 1,
+      "title": "Morning Run",
+      "description": "Run 5km every morning to stay fit and energized.",
+      "category": "Fitness",
+      "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=500&q=60",
+      "technologies": ["Running Shoes", "Smartwatch"],
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "title": "Read 20 Pages",
+      "description": "Read at least 20 pages of a non-fiction book every night.",
+      "category": "Education",
+      "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=60",
+      "technologies": ["Kindle", "Physical Books"],
+      "status": "Active"
+    }
+  ]
+}
