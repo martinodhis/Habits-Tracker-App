@@ -1,16 +1,27 @@
 import { useState } from 'react'
 
-function HabitForm({ onAddHabit }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    category: 'Health',
-    image: '',
-    frequency: 'Daily',
-    status: 'Active'
-  })
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
+const HabitForm = ({ onAddHabit }) => {
+    const [formData, setFormData] = useState({
+        title: '',
+        description: '',
+        category: 'Health',
+        image: '',
+        frequncy: 'Daily',
+        status: 'Active'
+    });
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+    const handleChange = (e) =>{
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setError('');
+        setSuccess(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -27,56 +38,32 @@ function HabitForm({ onAddHabit }) {
       return
     }
 
-    onAddHabit(formData)
-    setFormData({
-      name: '',
-      description: '',
-      category: 'Health',
-      image: '',
-      frequency: 'Daily',
-      status: 'Active'
-    })
-    setSuccess(true)
-  }
+            <form onSubmit={handleSubmit} className="habit-form">
+                <div className="form-group">
+                    <label htmlFor="title">Habit Title:</label>
+                    <input
+                       type="text"
+                       id="title"
+                       name="title"
+                       value={formData.title}
+                       onChange={handleChange}
+                       placeholder="e.g., Morning Meditations"  
+                    ></input>
+                </div>
 
   return (
     <div className="form-container">
       <h2>Add a new habit</h2>
 
-      {error && (
-        <div className="error-message" style={{ color: 'red', marginBottom: '1rem' }}>
-          {error}
-        </div>
-      )}
-      {success && (
-        <div className="success-message" style={{ color: 'green', marginBottom: '1rem' }}>
-          Habit successfully logged!
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="habit-form">
-        <div className="form-group">
-          <label htmlFor="name">Habit Title:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="e.g., Morning Meditation"
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            placeholder="Why or how do you want to accomplish this?"
-          />
-        </div>
+                <div>
+                    <label htmlFor="category">Category:</label>
+                    <select name="category" id="category" value={formData.category} onChange={handleChange}>
+                        <option value="Health">Health & Fitness</option>
+                        <option value="Mind">Mind & Focus</option>
+                        <option value="Finance">Finance & Budgeting</option>
+                        <option value="Social">Social & Relationship</option>
+                    </select>
+                </div>
 
         <div className="form-group">
           <label htmlFor="category">Category:</label>

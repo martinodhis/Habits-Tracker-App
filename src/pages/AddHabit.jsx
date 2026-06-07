@@ -35,6 +35,11 @@ function AddHabit({ onHabitAdded }) {
         <h1>Set New Routines</h1>
         <p>Consistency is key. Design a tracking metric down below.</p>
       </div>
+            {/* Passing state action download using props*/}
+            <HabitForm onAddHabit={handleAddNewHabitToServer}/>
+        </main>
+    );
+};
 
       <HabitForm onAddHabit={handleAddNewHabitToServer} />
     </main>

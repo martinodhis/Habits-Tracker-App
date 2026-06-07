@@ -1,1 +1,59 @@
-{}
+{
+  "habits": [
+    {
+      "id": "1",
+      "name": "Drink Water",
+      "category": "Health",
+      "frequency": "Daily",
+      "goal": "Drink 8 glasses of water every day",
+      "status": "Active",
+      "description": "A daily habit to improve hydration and overall health."
+    },
+    {
+      "id": "2",
+      "name": "Morning Run",
+      "category": "Fitness",
+      "frequency": "Daily",
+      "goal": "Run 5km every morning",
+      "status": "Active",
+      "description": "Build cardiovascular endurance by running each morning before breakfast."
+    },
+    {
+      "id": "3",
+      "name": "Read a Book",
+      "category": "Learning",
+      "frequency": "Daily",
+      "goal": "Read at least 30 minutes each evening",
+      "status": "Paused",
+      "description": "Read a non-fiction book to continuously grow knowledge and vocabulary."
+    },
+    {
+      "id": "4",
+      "name": "Weekly Meal Prep",
+      "category": "Health",
+      "frequency": "Weekly",
+      "goal": "Prepare healthy meals every Sunday",
+      "status": "Completed",
+      "description": "Prepare portioned, healthy meals for the week to avoid unhealthy eating."
+    },
+    {
+      "id": "5",
+      "name": "Practice Coding",
+      "category": "Learning",
+      "frequency": "Daily",
+      "goal": "Solve one coding challenge or work on a side project daily",
+      "status": "Active",
+      "description": "Sharpen programming skills through consistent daily practice."
+    },
+    {
+      "title": "b",
+      "description": "a",
+      "category": "Health",
+      "image": "",
+      "frequency": "Weekly",
+      "status": "Active",
+      "id": "qpx3QyyXe1o"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
