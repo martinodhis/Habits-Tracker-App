@@ -9,7 +9,7 @@ function About() {
                     It helps you log daily habits of your choosing, build streaks,
                     and stay consistent over time.
                 </p>
-            </section><br /><br />
+            </section><br />
 
             <section className="about-details">
                 <h2>How it works</h2>
@@ -17,7 +17,7 @@ function About() {
                     <li>Add habits you want to build.</li>
                     <li>Check them off every day.</li>
                     <li>Come back daily to keep your streak going.</li>
-                </ul><br /><br />
+                </ul><br />
 
                 <h2>This project was built using:</h2>
                 <ul>
