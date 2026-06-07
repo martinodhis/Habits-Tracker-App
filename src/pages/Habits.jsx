@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import HabitList from '../components/HabitList';
-import HabitFilter from '../components/HabitFilter';
+import Habitfilter from '../components/Habitfilter';
 
 function Habits() {
   const [habits, setHabits] = useState([]);
@@ -26,7 +26,7 @@ function Habits() {
   return (
     <div className="habits-page">
       <h1>My Habits</h1>
-      <HabitFilter filters={filters} onChange={setFilters} />
+      <Habitfilter filters={filters} onChange={setFilters} />
       <HabitList habits={filteredHabits} />
     </div>
   );
