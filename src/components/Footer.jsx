@@ -7,7 +7,7 @@ function Footer() {
         <div className="footer_brand">
           <p className="footer_brandname">HabitTracker</p>
         </div>
-        <p className="footer_tagline">Build better habits, one day at a time.</p> //
+        <p className="footer_tagline">Build better habits, one day at a time.</p>
       </div>
 
       <div className="footer_bottom">
