@@ -30,7 +30,7 @@
 # Setup Instructions
 1. Clone the repository to your local machine.
 2. Install dependencies using : npm install.
-3. Start the JSON Server.
+3. Start the JSON Server using npm run server in the terminal.
 4. Start the development server using npm run dev.
 
 # Routes
@@ -40,6 +40,7 @@
 2. Managing shared state across components required careful planning of where to place useState and which props to pass down.
 3. Connecting the form submission to JSON Server and reflecting the new habit in the list without a page refresh needed useEffect to re-fetch after a POST request.
 4. CSS layout on smaller screen sizes required extra media queries to keep the navbar and cards readable.
+
 # Future Improvements
 - Add a habit completion tracker where users can mark a habit as done for the day.
 - Add a streak counter that tracks how many consecutive days a habit has been completed.
