@@ -1,186 +1,55 @@
-/* ── Layout ── */
-.app-container {
-  padding: 24px 32px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ── Habit Filter ── */
-.habit-filter {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-  padding: 16px 20px;
-  background: var(--code-bg);
-  border-radius: 10px;
-  border: 1px solid var(--border);
-}
-
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1 1 140px;
-}
-
-.filter-group label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.filter-group select {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text-h);
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.filter-group select:focus {
-  border-color: var(--accent);
-}
-
-/* ── Habit Details Page ── */
-.habit-details-page {
-  padding: 24px 32px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.back-btn {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-h);
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 24px;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.back-btn:hover {
-  background: var(--code-bg);
-  border-color: var(--accent);
-}
-
-/* ── Habit Details Component ── */
-.habit-details {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: var(--shadow);
-}
-
-.habit-details-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.habit-details-header h2 {
-  margin: 0;
-  font-size: 26px;
-  color: var(--text-h);
-}
-
-.habit-description {
-  color: var(--text);
-  font-size: 15px;
+body {
+  background-color: #f9fafb;
+  color: #111;
   line-height: 1.6;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 20px;
 }
 
-.habit-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+.home, .about, .habit-details-page, .page-layout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-.meta-item {
+.habit-card, .habit-details, .form-container {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+/* Flex column with gap — form-group, filter-group, meta-item */
+.form-group, .filter-group, .meta-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.4rem;
 }
 
-.meta-label {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text);
+.home-features, .habit-filter, .footer_inner, .footer_bottom {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.meta-value {
-  font-size: 15px;
-  color: var(--text-h);
-  font-weight: 500;
+.submit-btn, .view-details-btn, .back-btn {
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  background: none;
 }
 
-/* ── Status Badge ── */
-.status-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: capitalize;
+.submit-btn {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
 }
 
-.status-badge.active {
-  background: rgba(34, 197, 94, 0.15);
-  color: #16a34a;
-}
-
-.status-badge.paused {
-  background: rgba(234, 179, 8, 0.15);
-  color: #ca8a04;
-}
-
-.status-badge.completed {
-  background: rgba(99, 102, 241, 0.15);
-  color: #4f46e5;
-}
-
-/* ── Status Messages ── */
-.status-message {
-  text-align: center;
-  padding: 40px;
-  font-size: 16px;
-  color: var(--text);
-}
-
-.status-message.error {
-  color: #dc2626;
-}
-
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  .habit-details-page,
-  .app-container {
-    padding: 16px;
-  }
-
-  .habit-filter {
-    flex-direction: column;
-  }
-
-  .habit-details-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.footer {
+  margin-top: 4rem;
+  border-top: 1px solid #e5e7eb;
+  padding: 2rem 1.5rem;
+  background-color: #fff;
+  font-size: 0.85rem;
+  color: #888;
 }
