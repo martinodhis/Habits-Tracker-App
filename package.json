@@ -9,11 +9,7 @@
     "lint": "eslint .",
 
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3000"
-=======
-    "preview": "vite preview"
-    
-
+    "server": "json-server --watch db.json --port 3000" 
   },
   "dependencies": {
     "react": "^19.2.6",
