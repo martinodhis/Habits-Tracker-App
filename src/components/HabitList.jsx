@@ -1,7 +1,6 @@
-// HabitList.jsx
 import HabitCard from './HabitCard'
 
-function HabitList({ habits }) {
+function HabitList({ habits = [0] }) {
   if (habits.length === 0) {
     return <p className="no-habits">No habits found. Add a new habit to get started!</p>
   }
@@ -14,4 +13,5 @@ function HabitList({ habits }) {
     </div>
   )
 }
+
 export default HabitList

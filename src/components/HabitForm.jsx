@@ -1,99 +1,111 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
 
 const HabitForm = ({ onAddHabit }) => {
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState(false);
-
     const [formData, setFormData] = useState({
-        name: '', // Changed from title to match db.json
+        title: '',
         description: '',
         category: 'Health',
         image: '',
-        frequency: 'Daily', 
+        frequncy: 'Daily',
         status: 'Active'
     });
-
-    const handleChange = (e) => {
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+    const handleChange = (e) =>{
         const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setError('');
         setSuccess(false);
 
-        if(!formData.name.trim() || !formData.description.trim()){
-            setError('Please fill in both the Name and Description fields.');
+        if(!formData.title.trim() || !formData.description.trim()){
+            setError('Please fill in both the Title and Description fields.');
             return;
         }
-        
         onAddHabit(formData);
-        setFormData({ name: '', description: '', category: 'Health', image: '', frequency: 'Daily', status: 'Active' });
+        setFormData({
+            title: '',
+            description: '',
+            category: 'Health',
+            image: '',
+            frequency: 'Daily',
+            status: 'Active'
+        });
         setSuccess(true);
     };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setError('')
-    setSuccess(false)
+    return(
+        <div className='form-container'>
+            <h2>Add a new habit track</h2>
 
-            {error && <div className="error-message" style={{color: 'red', marginBottom: '1rem'}}>{error}</div>}
-            {success && <div className="success-message" style={{color: 'green', marginBottom: '1rem'}}>Habit successfully logged!</div>}
+            {/*conditional Rendering UI Notification*/}
+            {error && <div className="error-message" style ={{color: 'red', marginBottom: '1rem'}}>{error}</div>}
+            {success && <div className="success-message"style={{color: 'green', marginBottom: '1rem'}}>Habit successfully logged!</div>}
 
             <form onSubmit={handleSubmit} className="habit-form">
                 <div className="form-group">
-                    <label htmlFor="name">Habit Name:</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="e.g., Morning Meditations" />
+                    <label htmlFor="title">Habit Title:</label>
+                    <input
+                       type="text"
+                       id="title"
+                       name="title"
+                       value={formData.title}
+                       onChange={handleChange}
+                       placeholder="e.g., Morning Meditations"  
+                    ></input>
                 </div>
 
-                <div className="form-group">
+                <div>
                     <label htmlFor="description">Description:</label>
-                    <textarea id="description" name="description" value={formData.description} onChange={handleChange} placeholder="Why or how do you want to accomplish this?" />
+                    <textarea
+                        id="description"
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        placeholder="Why or how do you want to accomplish this?"
+                    />
                 </div>
 
-                <div className="form-group">
+                <div>
                     <label htmlFor="category">Category:</label>
                     <select name="category" id="category" value={formData.category} onChange={handleChange}>
-                        {/* Aligned with db.json and HabitFilter */}
-                        <option value="Health">Health</option>
-                        <option value="Fitness">Fitness</option>
-                        <option value="Learning">Learning</option>
+                        <option value="Health">Health & Fitness</option>
+                        <option value="Mind">Mind & Focus</option>
+                        <option value="Finance">Finance & Budgeting</option>
+                        <option value="Social">Social & Relationship</option>
                     </select>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="image">Image URL:</label>
-                    <input type="url" id="image" name="image" value={formData.image} onChange={handleChange} placeholder="https://example.com/habit-thumbnail.jpg" />
+                    <input 
+                      type="url"
+                      id="image"
+                      name="image"
+                      value={formData.image}
+                      onChange={handleChange}
+                      placeholder="https://example.com/habit-thumbnail.jpg" 
+                    />
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="frequency">Target Frequency:</label>
                     <select name="frequency" id="frequency" value={formData.frequency} onChange={handleChange}>
-                        {/* Aligned with db.json and HabitFilter */}
                         <option value="Daily">Daily</option>
                         <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
                     </select>
                 </div>
 
-        <div className="form-group">
-          <label htmlFor="frequency">Target Frequency:</label>
-          <select
-            name="frequency"
-            id="frequency"
-            value={formData.frequency}
-            onChange={handleChange}
-          >
-            <option value="Daily">Daily</option>
-            <option value="Weekly">Weekly</option>
-            <option value="Monthly">Monthly</option>
-          </select>
+                <button type="submit" className="submit-btn">Save Habit</button>
+            </form>
         </div>
+    );
+};
 
-        <button type="submit" className="submit-btn">Save Habit</button>
-      </form>
-    </div>
-  )
-}
-
-export default HabitForm
+export default HabitForm;

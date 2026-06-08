@@ -35,9 +35,4 @@ const AddHabit = () => {
     );
 };
 
-      <HabitForm onAddHabit={handleAddNewHabitToServer} />
-    </main>
-  )
-}
-
 export default AddHabit

@@ -14,4 +14,5 @@ function HabitCard({ habit }) {
     </div>
   )
 }
+
 export default HabitCard

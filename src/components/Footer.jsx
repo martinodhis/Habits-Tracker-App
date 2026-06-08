@@ -1,6 +1,3 @@
-
-// Footer.jsx
-
 function Footer() {
   const year = new Date().getFullYear()
 

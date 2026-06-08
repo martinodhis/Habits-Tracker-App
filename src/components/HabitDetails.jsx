@@ -1,7 +1,6 @@
 function HabitDetails({ habit }) {
   if (!habit) return null;
 
-
   return (
     <div className="habit-details">
       <div className="habit-details-header">
