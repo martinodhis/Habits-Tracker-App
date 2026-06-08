@@ -1,4 +1,7 @@
 function HabitDetails({ habit }) {
+  if (!habit) return null;
+
+
   return (
     <div className="habit-details">
       <div className="habit-details-header">
@@ -10,7 +13,7 @@ function HabitDetails({ habit }) {
 
       <p className="habit-description">{habit.description}</p>
 
-      <div className="habit-meta">
+      <div className="habit-meta-grid"> {/* Changed from habit-meta to match index.css */}
         <div className="meta-item">
           <span className="meta-label">Goal</span>
           <span className="meta-value">{habit.goal}</span>

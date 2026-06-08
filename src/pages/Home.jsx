@@ -1,31 +1,24 @@
-function Home() {
-    return (
-        <div className="home">
+import HabitList from '../components/HabitList';
 
-            <section className="home-intro">
+function Home({ habits, loading, error }) {
+    if (loading) return <p className="status-message">Loading habits...</p>;
+    if (error) return <p className="status-message error">{error}</p>;
+
+    return (
+        <div className="page-layout home">
+            <div className="page-header">
                 <h1>Build habits that stick.</h1>
                 <p>
                     Our Habit Tracker helps you track your daily habits,
                     measure your progress and consistency,
                     and use that information to drive yourself to improve.
                 </p>
-            </section>
+            </div>
 
-            <section className="home-features">
-                <div className="feature-card">
-                    <h3>Track daily</h3>
-                    <p>Check off your habits each day with only a single click.</p>
-                </div>
-                <div className="feature-card">
-                    <h3>Maintain your streak</h3>
-                    <p>Watch your consistency grow day after day.</p>
-                </div>
-                <div className="feature-card">
-                    <h3>Stay focused</h3>
-                    <p>Focus on tracking what you want to achieve.</p>
-                </div>
-            </section>
+            <h2 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Your Habits</h2>
+            <HabitList habits={habits} />
         </div>
     )
 }
+
 export default Home

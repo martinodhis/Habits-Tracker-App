@@ -28,6 +28,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+
 }
 
 .submit-btn, .view-details-btn, .back-btn {
@@ -45,6 +46,25 @@ body {
   border: none;
 }
 
+=======
+}
+
+.submit-btn, .view-details-btn, .back-btn {
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  background: none;
+}
+
+.submit-btn {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+}
+
+
 .footer {
   margin-top: 4rem;
   border-top: 1px solid #e5e7eb;
@@ -53,3 +73,6 @@ body {
   font-size: 0.85rem;
   color: #888;
 }
+
+}
+
