@@ -53,6 +53,16 @@
       "frequency": "Weekly",
       "status": "Active",
       "id": "qpx3QyyXe1o"
+    },
+    {
+      "title": "wurk",
+      "description": "dps",
+      "category": "Health",
+      "image": "",
+      "frequncy": "Daily",
+      "status": "Active",
+      "frequency": "Monthly",
+      "id": "l1LKhJsu6qY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
