@@ -1,6 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import HabitForm from '../components/HabitForm';
+import { useNavigate } from 'react-router-dom'
+import HabitForm from '../components/HabitForm'
 
 const AddHabit = () => {
     const navigate = useNavigate(); 
@@ -36,4 +35,9 @@ const AddHabit = () => {
     );
 };
 
-export default AddHabit;
+      <HabitForm onAddHabit={handleAddNewHabitToServer} />
+    </main>
+  )
+}
+
+export default AddHabit

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 
 const HabitForm = ({ onAddHabit }) => {
     const [error, setError] = useState('');
@@ -33,9 +33,10 @@ const HabitForm = ({ onAddHabit }) => {
         setSuccess(true);
     };
 
-    return(
-        <div className='form-container'>
-            <h2>Add a new habit track</h2>
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setError('')
+    setSuccess(false)
 
             {error && <div className="error-message" style={{color: 'red', marginBottom: '1rem'}}>{error}</div>}
             {success && <div className="success-message" style={{color: 'green', marginBottom: '1rem'}}>Habit successfully logged!</div>}
@@ -75,10 +76,24 @@ const HabitForm = ({ onAddHabit }) => {
                     </select>
                 </div>
 
-                <button type="submit" className="submit-btn">Save Habit</button>
-            </form>
+        <div className="form-group">
+          <label htmlFor="frequency">Target Frequency:</label>
+          <select
+            name="frequency"
+            id="frequency"
+            value={formData.frequency}
+            onChange={handleChange}
+          >
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+          </select>
         </div>
-    );
-};
 
-export default HabitForm;
+        <button type="submit" className="submit-btn">Save Habit</button>
+      </form>
+    </div>
+  )
+}
+
+export default HabitForm
